@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://cdn.plot.ly/plotly-3.4.0.min.js'></script>
+    <title>Interactive H-R Diagram</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li id="current-page">home.</li>
+                <li>about.</li>
+            </ul>
+        </nav>
+        <h1>interactive hertzprung-russell diagram.</h1>
+    </header>
+    <section class="main-body">
+        <!-- main scatterplot goes here. -->
+        <div id="plotly-scatterplot"></div>
+        <script src="plotter.js"></script>
+        <div id="tester" style="width:600px; height:250px"></div>
+        <script>
+            TESTER = document.getElementById('tester');
+            Plotly.newPlot( TESTER, [{
+                x: [1,2,3,4,5],
+                y: [3,4,6,9,10]
+            }], {
+                margin: { t: 0 }
+            });
+        </script>
+    </section>
+    <footer>
+        buy me a coffee?
+    </footer>
+</body>
+</html>
