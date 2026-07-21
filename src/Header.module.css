@@ -1,0 +1,14 @@
+.navbar {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+
+.navlist {
+    display: inline;
+    list-style: none;
+    padding-right: 20px;
+}
