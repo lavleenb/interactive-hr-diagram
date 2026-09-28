@@ -8,7 +8,18 @@
 }
 
 .navlist {
-    display: inline;
+    float: right;
+    direction: rtl;
+    flex-direction: row;
+    display: flex;
+    gap: 20px;
     list-style: none;
     padding-right: 20px;
+}
+
+h1 {
+    float: left;
+    width: 50%;
+    line-height: 30pt;
+    text-align: left;
 }
