@@ -1,6 +1,8 @@
 # Interactive H-R Diagram
 An interactive hertzprung-russell diagram used by astronomers.
 
+⊹ ࣪ ˖🚧 this project is still under construction 🚧⋆˚࿔
+
 ## What is a Hertzprung-Russell diagram? 
 Often described as the periodic table for astronomers, the hertzprung-russell diagram plots the luminosity of stars against their temperature, revealing many important relationships between the two properties. 
 Some important star groups become visible, including the main sequence stars along the diagonal trend of the graph, the red giants, white dwarves, and more. 
