@@ -1,0 +1,26 @@
+.wrapper {
+    animation: scroll 500s linear infinite;
+    background: url(ohmystars-2.jpg);
+    color: #000;
+    height: 100%;
+    min-width: 360px;
+    width: 100%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+}
+
+@keyframes scroll {
+    100% {
+    background-position: 0px -400%;
+    }
+}
+
+/* Fallback if the operatring system prefers reduced motion*/
+@media (prefers-reduced-motion) {
+    .wrapper {
+    animation: scroll 800s linear infinite;
+    }
+}

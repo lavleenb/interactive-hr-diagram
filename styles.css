@@ -1,5 +1,6 @@
 body {
     background-color: black;
+    margin: 0px 0px 0px 0px;
 }
 
 h1 {
@@ -47,4 +48,8 @@ p {
     color: rgb(212, 207, 207);
 }
 
+#plotly-scatterplot {
+    justify-self: center;
+    opacity: 70%;
+}
 
