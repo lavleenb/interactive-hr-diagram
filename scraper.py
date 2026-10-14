@@ -5,6 +5,7 @@ import csv
 
 
 url_base = 'https://en.wikipedia.org/wiki/'
+testing_url = 'https://en.wikipedia.org/wiki/HR_7955'
 with open('stardata.csv', "r", newline='') as csvfile: 
     spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
     next(spamreader, None) # skips headers
@@ -13,14 +14,16 @@ with open('stardata.csv', "r", newline='') as csvfile:
             "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.75 Safari/537.36",
             "X-Requested-With": "XMLHttpRequest"
         }
-
-        url = url_base + csv_row[2]
+        format_star_name = csv_row[2].split(' ')
+        url = url_base + "_".join(format_star_name)
+        # print(url)
 
         req = requests.get(url, headers=header)
 
         soup = BeautifulSoup(req.text, 'html.parser')
         tables = soup.find_all('table')
 
+        incomplete_info_stars = []
         for table in tables: 
             if 'Details' in table.text:
                 rows = []
@@ -28,9 +31,19 @@ with open('stardata.csv', "r", newline='') as csvfile:
                 for row in table_rows:
                     td = row.find_all('td')
                     row = [row.text for row in td]
-                    rows.append(row)
+                    if (len(row) > 0):
+                        if (row[0] == 'Luminosity' or row[0] == 'Temperature'):
+                            rows.append(row)
+                        else:
+                            incomplete_info_stars.append(row)
         df = pd.DataFrame(rows)
-        lum_index = df.set_index(0).index.get_loc('Luminosity')
-        temp_index = df.set_index(0).index.get_loc('Temperature')
-        print(df.at[lum_index, 1])
-        print(df.at[temp_index, 1])
+        if (not df.empty):
+            print(df)
+        
+            lum_index = 0
+            temp_index = 1
+            if (df[0].nunique() > 1):
+                print(df.at[lum_index, 1])
+                print(df.at[temp_index, 1])
+            else: 
+                print(df.at[0,0], df.at[0, 1])

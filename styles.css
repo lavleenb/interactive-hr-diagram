@@ -8,7 +8,7 @@ header {
 }
 
 h1 {
-    color: white;
+    color: rgb(209, 204, 223);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 35pt;
     width: 550px;
@@ -16,7 +16,7 @@ h1 {
     animation: slideIn 0.5s;
 }
 h3 {
-    color: white;
+    color: rgb(209, 204, 223);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25pt;
     width: 550px;
@@ -27,7 +27,7 @@ h3 {
 p {
     width: 150vh;
     text-align: justify;
-    color: white;
+    color: rgb(209, 204, 223);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16pt;
     margin-left: 2rem;
@@ -43,7 +43,7 @@ p {
     display: flex;
     list-style: none;
     padding-right: 20px;
-    color: white;
+    color: rgb(209, 204, 223);
     animation: slideIn 0.5s;
 }
 .navlist li {
@@ -54,14 +54,14 @@ p {
 .navlist li a {
     float: right;
     text-decoration: none;
-    color: white;
+    color: rgb(209, 204, 223);
     font-size: 18px;
     text-align: center;
     padding: 14px 16px;
 }
 
 .navlist li a:hover {
-    color: rgb(212, 207, 207);
+    color: rgb(209, 204, 223);
 }
 
 #plotly-scatterplot {
