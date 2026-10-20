@@ -5,7 +5,6 @@ import csv
 
 
 url_base = 'https://en.wikipedia.org/wiki/'
-testing_url = 'https://en.wikipedia.org/wiki/HR_7955'
 with open('stardata.csv', "r", newline='') as csvfile: 
     spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
     next(spamreader, None) # skips headers
@@ -16,7 +15,7 @@ with open('stardata.csv', "r", newline='') as csvfile:
         }
         format_star_name = csv_row[2].split(' ')
         url = url_base + "_".join(format_star_name)
-        # print(url)
+        print(url)
 
         req = requests.get(url, headers=header)
 
@@ -42,8 +41,10 @@ with open('stardata.csv', "r", newline='') as csvfile:
         
             lum_index = 0
             temp_index = 1
-            if (df[0].nunique() > 1):
+            if (df[0].nunique() > 1): # if there is only one temperature or luminosity, use the indexing.
                 print(df.at[lum_index, 1])
-                print(df.at[temp_index, 1])
+                print(df.at[temp_index, 1]) # we do this because some stars don't have luminosity or temperature. those
+                # will be filtered out before feeding into the graph.
             else: 
-                print(df.at[0,0], df.at[0, 1])
+                print(df.at[0,0], df.at[0, 1]) # if there are multiple temperatures or luminosities for member stars,
+                # we take the first instance of both, as I can trust that wikipedia places the A member star first.
