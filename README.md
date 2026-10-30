@@ -19,4 +19,4 @@ For the time being, I am using my own backyard observations and backing them up 
 ## Next steps? 
 I hope to continue learning ADQL and querying the Gaia database for more accurate results from a trusted source. I also plan to include more ways for the user to interact with the app. This includes adding stars to see where they'd appear on the graph and exploring star lifecycles based on their starting mass. 
 
-- Lavleen
+-- Lavleen
